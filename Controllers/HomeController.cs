@@ -109,6 +109,13 @@ namespace Login_and_Registration.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult Logout(){
+                HttpContext.Session.SetString("User", null);
+
+                return Redirect("/login");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
