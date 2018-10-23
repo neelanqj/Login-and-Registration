@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <h1>Register to this Cool Site!</h1>
+    </div>
+    <div class="col-md-2">
+        <a href="/login">Login</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @Html.ValidationSummary()
+    </div>
+</div>
+
+@model User
+<form action="/" method="POST">
+    <div class="row">
+        <div class="col-md-4">
+            <label asp-for="FirstName"></label><br/>
+            <input asp-for="FirstName"/><br/><br/>
+            <label asp-for="LastName"></label><br/>
+            <input asp-for="LastName"/><br/><br/>
+            <label asp-for="Email"></label><br/>
+            <input asp-for="Email"/><br/><br/>
+            <input type="submit" value="Sign Up Now" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Password"></label><br/>
+            <input asp-for="Password" /><br/><br/>
+            
+            <label asp-for="Confirm"></label><br/>
+            <input asp-for="Confirm" /><br/><br/>
+        </div>
+    </div>
+</form>
